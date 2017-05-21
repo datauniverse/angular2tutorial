@@ -1,11 +1,17 @@
-<div *ngIf="hero">
-  <h2>{{hero.name}} details!</h2>
-  <div>
-    <label>id: </label>{{hero.id}}
+<div class="w3-container" *ngIf="hero">
+  <div class="w3-card-2">
+    <header>
+      <h2>{{hero.name}} details!</h2>
+    </header>
+    <div class="w3-container">
+      ID: {{hero.id}}
+      Name: {{hero.name}}
+    </div>
+    <div class="w3-container">
+      Update: <input [(ngModel)]="hero.name" placeholder="name">
+    </div>
+    <footer>
+      <button (click)="goBack()">Back</button>
+    </footer>
   </div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name">
-  </div>
-  <button (click)="goBack()">Back</button>
 </div>

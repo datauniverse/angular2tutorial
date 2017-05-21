@@ -1,8 +1,16 @@
-<h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
+<!-- Header -->
+<header class="w3-container" style="padding-top:22px">
+  <h5><b><i class="fa fa-gratipay"></i>&nbsp;&nbsp;Top Heroes</b></h5>
+</header>
+<div class="w3-row-padding w3-margin-bottom">
+  <div *ngFor="let hero of heroes" class="w3-quarter">
+    <div class="w3-container w3-teal w3-padding-16">
+      <div class="w3-left"><i class="fa fa-gratipay w3-xxxlarge"></i></div>
+      <div class="w3-right">
+        <h3>{{hero.id}}</h3>
+      </div>
+      <div class="w3-clear"></div>
+      <h4 [routerLink]="['/detail', hero.id]">{{hero.name}}</h4>
     </div>
-  </a>
+  </div>
 </div>

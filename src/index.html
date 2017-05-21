@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Angular QuickStart</title>
+    <title>Angular QuickStart with W3.CSS</title>
+
     <base href="/">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -19,7 +26,50 @@
     </script>
   </head>
 
-  <body>
+  <body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+      <!-- TODO: Uncomment this only when you figure out how to implement this in mobile -->
+      <!--
+      <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+        <i class="fa fa-bars"></i>  Menu
+      </button>
+      -->
+      <span class="w3-bar-item w3-right">Logo</span>
+    </div>
+
     <my-app>Loading AppComponent content here ...</my-app>
+
+    <!-- TODO: Uncomment this after you figure out how to do this on mobile -->
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <!--
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    -->
+  <script>
+  // Get the Sidebar
+  var mySidebar = document.getElementById("mySidebar");
+
+  // Get the DIV with overlay effect
+  var overlayBg = document.getElementById("myOverlay");
+
+  // Toggle between showing and hiding the sidebar, and add overlay effect
+  function w3_open() {
+      if (mySidebar.style.display === 'block') {
+          mySidebar.style.display = 'none';
+          overlayBg.style.display = "none";
+      } else {
+          mySidebar.style.display = 'block';
+          overlayBg.style.display = "block";
+      }
+  }
+
+  // Close the sidebar with the close button
+  function w3_close() {
+      mySidebar.style.display = "none";
+      overlayBg.style.display = "none";
+  }
+  </script>
+
   </body>
 </html>

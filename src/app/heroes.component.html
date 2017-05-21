@@ -1,12 +1,19 @@
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-<div *ngIf="selectedHero">
-  <h2>
-    {{selectedHero.name | uppercase}} is my hero
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
+<header class="w3-container" style="padding-top:22px">
+  <h5><b><i class="fa fa-gratipay"></i>&nbsp;&nbsp;My Heroes</b></h5>
+</header>
+
+<div class="w3-container">
+  <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+    <tr *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <td>{{hero.id}}</td>
+      <td>{{hero.name}}</td>
+    </tr>
+  </table>
+  <br>
+  <div *ngIf="selectedHero">
+    <h2>
+      {{selectedHero.name | uppercase}} is my hero
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
 </div>
